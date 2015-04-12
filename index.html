@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sharpen the Dev Saw</title>
+	<link href="Content/bootstrap.css" rel="stylesheet"/>	 
+    <link href="Content/animate.css" rel="stylesheet" />
+	<link href="Content/sharpenTheSaw.css" rel="stylesheet" />	
+</head>
+<body>
+	<div class="container body-content">
+		<div class="row header-section">
+            <div class="jumbotron no-background-color jumbotron-reduced-padding">
+                <h1>Sharpen the Dev Saw</h1>
+                <p><em>"A little bit of self development a day goes a long way over a year"</em></p>    
+            </div>        
+
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <p>How many minutes can you commit a day?</p>
+                    <div class="form-sharpen">
+                        <input id="minutesCommited" type="text" placeholder="Minutes" class="form-control no-border-radius-bottom" maxlength="4" style="text-align: center" autofocus>
+                        <button id="calculate" class="btn btn-lg btn-primary btn-block no-border-radius-top" data-bind="click: calculateStats">
+                            Calculate
+                        </button>                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="notificationSection" data-bind="visible: showNotifications() === true" class="row notification-section"> 
+            <div class="row col-sm-10 col-sm-offset-1">
+                <h2 data-bind="html: notifications"></h2>
+            </div>
+        </div>
+
+		<div id="infoSection" data-bind="visible: minsCommitedKO() > 0">
+            
+            <div class="row counters-section">                
+                <h2>Over a year that's...</h2>                
+                <div class="row col-sm-8 col-sm-offset-2">
+                    <div class="col-md-4">
+                        <h1 id="minutesPerYearCountUp">0</h1>
+                        <h3>Minutes</h3>                                               
+                    </div>
+                    <div class="col-md-4">
+                        <h1 id="workingWeeksCountUp">0</h1>
+                        <h3>Average working weeks</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h1 id="hoursPerYearCountUp">0</h1>
+                        <h3>Hours</h3>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="row you-could-do-section">
+                <h2>With this time you could...</h2>
+                <div id="you-could-do-info-panel" class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">                    
+                    <ul>
+                    <li class="col-md-4">
+                        <a href="http://www.dotnetrocks.com/" target="_blank">
+                            <h2>.NET Rocks</h2>
+                            <h4>
+                                Listen to <span data-bind="text: dotNetRocksStat" class="emphasize"></span> podcasts
+                            </h4>        
+                        </a>
+                    </li>
+                    <li class="col-md-4">
+                        <a href="http://channel9.msdn.com/Events/TechEd" target="_blank">
+                            <h2>TechEd</h2>
+                            <h4>
+                                Watch <span data-bind="text: techEdStat" class="emphasize"></span> sessions
+                            </h4>
+                        </a>
+                    </li>
+                    <li class="col-md-4">    
+                        <a href="http://www.alvinashcraft.com/" target="_blank">
+                            <h2>Morning Dew</h2>
+                            <h4>
+                                Read <span data-bind="text: blogStat" class="emphasize"></span> blog posts
+                            </h4>
+                        </a>
+                    </li>
+                    <li class="col-md-4">
+                        <a href="http://www.pluralsight.com" target="_blank">
+                            <h2>Pluralsight</h2>
+                            <h4>
+                                Consume <span data-bind="text: pluralsightStat" class="emphasize"></span> courses
+                            </h4>
+                        </a>                    
+                    </li>
+                    <li class="col-md-4">
+                        <a href="http://ndcvideos.com" target="_blank">
+                            <h2>NDC</h2>
+                            <h4>
+                                View <span data-bind="text: ndcStat" class="emphasize"></span> videos
+                            </h4>        
+                        </a>
+                    </li>                    
+                    <li class="col-md-4">  
+                        <a href="http://en.wikipedia.org/wiki/Developer!_Developer!_Developer!" target="_blank">
+                            <h2>DDD!</h2>
+                            <h4>
+                                Attend <span data-bind="text: dddStat" class="emphasize"></span> full day events
+                            </h4>
+                        </a>
+                    </li>
+                    </ul>                    
+                </div>
+            </div>
+            
+            
+            <div class="row left-this-year-section">                
+                <div id="left-this-year-container" class="col-lg-8 col-lg-offset-2">
+                    <h2>
+                        Start today and you still have <span data-bind="text: sharpeningMinutesLeftThisYear" class="emphasize"></span> minutes of Sharpening the Dev Saw
+                        goodness to look forward to in <span data-bind="text: currentYear"></span>!
+                    </h2>
+                    <h2>What are you waiting for?</h2>
+                </div>                
+            </div>                
+		</div>            
+	
+        <div class="row footer-section">
+            <footer>
+                <p>&copy; 2015 - Created by Jonathan Ody</p>
+            </footer>
+        </div>
+	
+	</div>
+
+	<script src="Scripts/Libs/knockout-3.3.0.js"></script>			
+	<script src="Scripts/Libs/countUp.min.js"></script>
+    <script src="Scripts/Libs/classie.js"></script>
+	<script src="Scripts/settings.js"></script>
+    <script src="Scripts/statsCalculator.js"></script>
+	<script src="Scripts/AppViewModel.js"></script>
+</body>
+</html>

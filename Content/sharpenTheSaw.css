@@ -1,0 +1,170 @@
+body {
+	padding: 0;   
+    margin: 0;
+    color: white; 
+    background-color: #0A67C0;
+    text-align: center;
+    min-width: 275px;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+}
+
+.btn-wrap {
+	white-space: normal;
+}
+
+.no-background-color {
+	background-color: transparent;
+}
+
+.jumbotron-reduced-padding {
+	padding-top: 0;
+	padding-bottom: 0;    
+}
+
+.no-border-radius-top {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.no-border-radius-bottom {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.header-section {
+    padding: 0 2em 2em 2em;
+    background-color: #0A67C0;
+}
+
+.notification-section {
+    padding: 2em;
+    background-color: #C0392B;
+}
+
+.notification-section h2 {
+    margin: 0;
+}
+
+.counters-section {
+    padding: 2em;
+    background-color: #0EAE6C;
+}
+
+.counters-section h1 {
+    font-weight: 900;
+}
+
+.counters-section h2, 
+.counters-section h3 {
+    margin-top: 0;    
+}
+
+.counters-section h2 {
+    font-weight: bolder;
+}
+
+
+.you-could-do-section {
+    padding: 2em;
+    background-color: #F26565;
+}
+
+.you-could-do-section h2 {
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+.you-could-do-section ul {
+    padding: 0;
+}
+
+.you-could-do-section li {
+    list-style: none;    
+}
+
+.you-could-do-section li a:link,
+.you-could-do-section li a:visited,
+.you-could-do-section li a:hover,
+.you-could-do-section li a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.you-could-do-section li a:hover {
+    color: #BDC3C7;
+}
+
+.you-could-do-section li h2 {
+    background-color: darkblue; 
+    padding: 0.5em 0.3em; 
+    margin-top: 1em;   
+    font-weight: normal;
+}
+
+.emphasize {
+    font-weight: 900; 
+    font-size: 1.2em;
+}
+
+.left-this-year-section {
+    padding: 2em;
+    background-color: #F1844D;
+}
+
+.left-this-year-section h2 {
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+.footer-section {
+    padding: 2em;
+    background-color: #0A67C0;
+}
+
+.form-sharpen
+{
+	max-width: 330px;
+	padding: 0;
+	margin: 0 auto;
+}
+.form-sharpen .form-control
+{
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.form-sharpen .form-control:focus
+{
+	z-index: 2;
+}
+.form-sharpen input[type="text"]
+{
+	margin-bottom: -1px;
+}
+
+#stats-info-panel span {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#calculate:focus, #calculate:hover {
+    outline: none;
+    border-color: #0A67C0;
+}
+
+.notes {
+    background-color: #0A67C0;
+    background-color: #0EAE6C;
+    background-color: #F26565;
+    background-color: #F1844D;
+    background-color: #3AA497;
+    background-color: #2A80B9;
+}
