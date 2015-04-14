@@ -1,4 +1,6 @@
-var statsCalculator = function () {
+"use strict";
+
+var statsCalculator = function () {    
     var calculateMinsPerYear = function (minsCommited) {
         return minsCommited * 365;
     },
@@ -18,6 +20,10 @@ var statsCalculator = function () {
         return Math.ceil((endOfYear.getTime() - today.getTime()) / (oneDay));
     },
         
+    calculateMinutesLeftThisYear = function (minsCommited) {
+        return (calculateDaysLeftThisYear() * minsCommited).toFixed(0);
+    },
+        
     calculateInfoStat = function (minsCommitted, statDivider) {                        
         return (calculateMinsPerYear(minsCommitted) / statDivider).toFixed(0);
     }
@@ -26,7 +32,7 @@ var statsCalculator = function () {
         calculateMinsPerYear: calculateMinsPerYear,
         calculateHoursPerYear: calculateHoursPerYear,
         calculateAverageWorkingWeeks: calculateAverageWorkingWeeks,        
-        calculateDaysLeftThisYear: calculateDaysLeftThisYear,
+        calculateMinutesLeftThisYear: calculateMinutesLeftThisYear,
         calculateInfoStat: calculateInfoStat
     }
 }();

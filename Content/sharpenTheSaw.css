@@ -128,7 +128,7 @@ body {
 .form-sharpen
 {
 	max-width: 330px;
-	padding: 0;
+    padding-top: 10px;
 	margin: 0 auto;
 }
 .form-sharpen .form-control
