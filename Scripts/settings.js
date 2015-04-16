@@ -1,24 +1,47 @@
 "use strict";
 
 var settings = {
-    stats: {
-        dividers: {
-            dotNetRocks: 60,
-            techEd: 75,
-            blogPost: 20,
-            ndcVideo: 60,
-            pluralsightCourse: 181,
-            dddswEvent: 480
-        },
-        identifiers: {
-            dotNetRocks: 'dotNetRocks',
-            techEd: 'techEd',
-            blogPost: 'blogPost',
-            ndcVideo: 'NdcVideo',
-            pluralsightCourse: 'pluralsightCourse',
-            dddswEvent: 'dddswEvent'
-        },
-        averageWorkingHoursPerWeek: 37.5
+    stats: {        
+        averageWorkingHoursPerWeek: 37.5,
+        
+        youCouldDo: [
+            {
+                title: '.NET Rocks',
+                url: 'http://www.dotnetrocks.com/',
+                template: 'Listen to <span class="emphasize">{0}</span> podcasts',
+                minutes: 60
+            },
+            {
+                title: 'TechEd',
+                url: 'http://channel9.msdn.com/Events/TechEd',
+                template: 'Watch <span class="emphasize">{0}</span> sessions',
+                minutes: 75
+            },
+            {
+                title: 'Morning Dew',
+                url: 'http://www.alvinashcraft.com/',
+                template: 'Read <span class="emphasize">{0}</span> blog posts',
+                minutes: 20
+            },
+            {
+                title: 'Pluralsight',
+                url: 'http://www.pluralsight.com',
+                template: 'Consume <span class="emphasize">{0}</span> courses',
+                minutes: 181
+            },
+            {
+                title: 'NDC',
+                url: 'http://ndcvideos.com',
+                template: 'View <span class="emphasize">{0}</span> videos',
+                minutes: 60
+            },
+            {
+                title: 'DDD!',
+                url: 'http://en.wikipedia.org/wiki/Developer!_Developer!_Developer!',
+                template: 'Attend <span class="emphasize">{0}</span> full day events',
+                minutes: 480
+            }            
+        ]
     },    
 
     countUp: {

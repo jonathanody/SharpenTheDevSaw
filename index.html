@@ -59,56 +59,14 @@
             <div class="row you-could-do-section">
                 <h2>With this time you could...</h2>
                 <div id="you-could-do-info-panel" class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">                    
-                    <ul>
-                    <li class="col-md-4">
-                        <a href="http://www.dotnetrocks.com/" target="_blank">
-                            <h2>.NET Rocks</h2>
-                            <h4>
-                                Listen to <span data-bind="text: dotNetRocksStat" class="emphasize"></span> podcasts
-                            </h4>        
-                        </a>
-                    </li>
-                    <li class="col-md-4">
-                        <a href="http://channel9.msdn.com/Events/TechEd" target="_blank">
-                            <h2>TechEd</h2>
-                            <h4>
-                                Watch <span data-bind="text: techEdStat" class="emphasize"></span> sessions
-                            </h4>
-                        </a>
-                    </li>
-                    <li class="col-md-4">    
-                        <a href="http://www.alvinashcraft.com/" target="_blank">
-                            <h2>Morning Dew</h2>
-                            <h4>
-                                Read <span data-bind="text: blogStat" class="emphasize"></span> blog posts
-                            </h4>
-                        </a>
-                    </li>
-                    <li class="col-md-4">
-                        <a href="http://www.pluralsight.com" target="_blank">
-                            <h2>Pluralsight</h2>
-                            <h4>
-                                Consume <span data-bind="text: pluralsightStat" class="emphasize"></span> courses
-                            </h4>
-                        </a>                    
-                    </li>
-                    <li class="col-md-4">
-                        <a href="http://ndcvideos.com" target="_blank">
-                            <h2>NDC</h2>
-                            <h4>
-                                View <span data-bind="text: ndcStat" class="emphasize"></span> videos
-                            </h4>        
-                        </a>
-                    </li>                    
-                    <li class="col-md-4">  
-                        <a href="http://en.wikipedia.org/wiki/Developer!_Developer!_Developer!" target="_blank">
-                            <h2>DDD!</h2>
-                            <h4>
-                                Attend <span data-bind="text: dddStat" class="emphasize"></span> full day events
-                            </h4>
-                        </a>
-                    </li>
-                    </ul>                    
+                    <ul data-bind="foreach: youCouldDoItems">
+                        <li class="col-md-4">
+                            <a data-bind="attr: { href: url }" target="_blank">
+                                <h2 data-bind="text: title"></h2>
+                                <h4 data-bind="html: text"></h4>        
+                            </a>
+                        </li>                        
+                    </ul>                                                              
                 </div>
             </div>
             

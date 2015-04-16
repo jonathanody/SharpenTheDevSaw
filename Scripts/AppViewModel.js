@@ -1,13 +1,21 @@
 "use strict";
 
-(function() {    
+(function() {
+    function YouCouldDoItem (title, url, text) {
+        self = this;
+        self.title = title;
+        self.url = url;
+        self.text = text;
+    };
+    
     
     function AppViewModel() {
         var self = this;        
         
         self.showNotifications = ko.observable(false);
         self.notifications = ko.observable("");
-        self.minsCommited = ko.observable(0);                        
+        self.minsCommited = ko.observable(0);
+        self.youCouldDoItems = ko.observableArray([]);
 
         self.dotNetRocksStat = ko.observable(0);
         self.techEdStat = ko.observable(0);
@@ -38,9 +46,9 @@
         };        
 
         var updateStats = function() {
-            updateCountUps();
+            updateCountUps();            
             updateYouCouldDoInfoPanel();
-            updateMinutesLeftThisYear();                
+            updateMinutesLeftThisYear();                            
         };
 
         var updateCountUps = function() {
@@ -49,15 +57,17 @@
             updateHoursPerYearCountUp();
         };        
 
-        var updateYouCouldDoInfoPanel = function() {        
-            // TODO: Replace with a iterator and use knockout foreach construct in UI to build UL
-            self.dotNetRocksStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.dotNetRocks));
-            self.techEdStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.techEd));
-            self.blogStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.blogPost));
-            self.ndcStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.ndcVideo));
-            self.pluralsightStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.pluralsightCourse));
-            self.dddStat(statsCalculator.calculateInfoStat(self.minsCommited(), settings.stats.dividers.dddswEvent));
-        };
+        var updateYouCouldDoInfoPanel = function () {
+            var infoPanelItems =  [];                    
+            
+            settings.stats.youCouldDo.forEach(function (item) {
+                var text = item.template.replace('{0}', statsCalculator.calculateInfoStat(self.minsCommited(), item.minutes));
+                
+                infoPanelItems.push(new YouCouldDoItem(item.title, item.url, text));                                
+            });                        
+            
+            self.youCouldDoItems(infoPanelItems);
+        };                
 
         var updateMinutesLeftThisYear = function () {
             self.sharpeningMinutesLeftThisYear(calculateMinutesLeftThisYear());
