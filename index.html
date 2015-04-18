@@ -4,9 +4,14 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sharpen the Dev Saw</title>
+    <!-- build:remove -->
 	<link href="Content/bootstrap.css" rel="stylesheet"/>	 
     <link href="Content/animate.css" rel="stylesheet" />
-	<link href="Content/sharpenTheSaw.css" rel="stylesheet" />	
+	<link href="Content/sharpenTheSaw.css" rel="stylesheet" />
+    <!-- /build -->
+    <!-- build:template
+    <%= styles %>
+    /build-->
 </head>
 <body>
 	<div class="container body-content">
@@ -89,12 +94,17 @@
         </div>
 	
 	</div>
-
+    
+    <!-- build:remove -->
 	<script src="Scripts/Libs/knockout-3.3.0.js"></script>			
 	<script src="Scripts/Libs/countUp.min.js"></script>
     <script src="Scripts/Libs/classie.js"></script>
 	<script src="Scripts/settings.js"></script>
     <script src="Scripts/statsCalculator.js"></script>
 	<script src="Scripts/AppViewModel.js"></script>
+    <!-- /build -->
+    <!-- build:template
+    <%= scripts %>
+    /build -->
 </body>
 </html>
