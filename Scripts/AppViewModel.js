@@ -28,7 +28,7 @@
         self.currentYear = new Date().getFullYear();
 
         var minsCommitedInputElement = document.getElementById(settings.minsCommitedInputElementName);
-        var youCouldDoInfoPanelElement = document.getElementById(settings.youCouldDoInfoPanelElementName);
+        var youCouldDoContainerElement = document.getElementById(settings.youCouldDoItemsContainerElementName);
         var leftThisYearContainerElement = document.getElementById(settings.timeLeftInfoPanelElementName);
         
         var previousMinsCommited = 0;        
@@ -47,7 +47,7 @@
 
         var updateStats = function() {
             updateCountUps();            
-            updateYouCouldDoInfoPanel();
+            updateYouCouldDoItems();
             updateMinutesLeftThisYear();                            
         };
 
@@ -57,17 +57,21 @@
             updateHoursPerYearCountUp();
         };        
 
-        var updateYouCouldDoInfoPanel = function () {
-            var infoPanelItems =  [];                    
+        var updateYouCouldDoItems = function () {
+            var items = [];                    
             
-            settings.stats.youCouldDo.forEach(function (item) {
-                var text = item.template.replace('{0}', statsCalculator.calculateInfoStat(self.minsCommited(), item.minutes));
+            settings.stats.youCouldDoItems.forEach(function (item) {                
+                var itemText = generateYouCouldDoItemText(item.template, item.minutes);
                 
-                infoPanelItems.push(new YouCouldDoItem(item.title, item.url, text));                                
+                items.push(new YouCouldDoItem(item.title, item.url, itemText));                                
             });                        
             
-            self.youCouldDoItems(infoPanelItems);
-        };                
+            self.youCouldDoItems(items);
+        };
+        
+        var generateYouCouldDoItemText = function (template, itemMinutes) {
+            return template.replace('{0}', statsCalculator.calculateInfoStat(self.minsCommited(), itemMinutes));                                         
+        }
 
         var updateMinutesLeftThisYear = function () {
             self.sharpeningMinutesLeftThisYear(calculateMinutesLeftThisYear());
@@ -169,12 +173,12 @@
         };
         
         var addAnimations = function() {
-            addAnimation(youCouldDoInfoPanelElement, settings.youCouldDoInfoPanelAnimation);            
+            addAnimation(youCouldDoContainerElement, settings.youCouldDoItemsContainerAnimation);            
             addAnimation(leftThisYearContainerElement, settings.timeLeftInfoPanelAnimation);                        
         };
         
         var removeAnimations = function () {       
-            removeAnimation(youCouldDoInfoPanelElement, settings.youCouldDoInfoPanelAnimation);
+            removeAnimation(youCouldDoContainerElement, settings.youCouldDoItemsContainerAnimation);
             removeAnimation(leftThisYearContainerElement, settings.timeLeftInfoPanelAnimation);                               
         };
         

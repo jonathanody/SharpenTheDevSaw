@@ -4,7 +4,7 @@ var settings = {
     stats: {        
         averageWorkingHoursPerWeek: 37.5,
         
-        youCouldDo: [
+        youCouldDoItems: [
             {
                 title: '.NET Rocks',
                 url: 'http://www.dotnetrocks.com/',
@@ -63,8 +63,8 @@ var settings = {
     
     minsCommitedInputElementName: 'minutesCommited',
     
-    youCouldDoInfoPanelElementName: 'you-could-do-info-panel',
-    youCouldDoInfoPanelAnimation: 'fadeIn', 
+    youCouldDoItemsContainerElementName: 'you-could-do-items-container',
+    youCouldDoItemsContainerAnimation: 'fadeIn', 
     
     timeLeftInfoPanelElementName: 'left-this-year-container',
     timeLeftInfoPanelAnimation: 'fadeIn',
