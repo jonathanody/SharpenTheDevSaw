@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         clean: {
             options: { force: true },
-            release: ['./../../../Release/SharpenTheDevSaw/Deploy/*'],
+            release: ['./../../../Release/SharpenTheDevSaw/Deploy/*', '!./../../../Release/SharpenTheDevSaw/Deploy/.git/**'],
             buildFiles: ['./../../../Release/SharpenTheDevSaw/Build/*']
         },
         concat: {
@@ -62,7 +62,21 @@ module.exports = function (grunt) {
 					'./../../../Release/SharpenTheDevSaw/Deploy/index.html': ['./../../../Release/SharpenTheDevSaw/Build/index.html']
 				}
 			}
-		}
+		},
+        exec: {
+            git_add: {
+                cwd: './../../../Release/SharpenTheDevSaw/Deploy/',
+                command: 'git add . --all'
+            },
+            git_commit: {
+                cwd: './../../../Release/SharpenTheDevSaw/Deploy/',
+                command: 'git commit -m "Deploy: <%grunt.template.today(\"dd-mm-yyy @ hh:MM:ss TT\") %>"'
+            },
+            git_push: {
+                cwd: './../../../Release/SharpenTheDevSaw/Deploy/',
+                command: 'git push azure master'
+            }
+        }
     });
     
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -70,7 +84,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-exec');
 
     grunt.registerTask('default', ['clean']);
-    grunt.registerTask('build', ['clean', 'uglify', 'cssmin', 'processhtml', 'htmlmin']);
+    grunt.registerTask('build', ['clean', 'uglify', 'cssmin', 'processhtml', 'htmlmin', 'exec']);
 };
