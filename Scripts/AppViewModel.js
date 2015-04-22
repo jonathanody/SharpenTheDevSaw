@@ -2,7 +2,7 @@
 
 (function() {
     function YouCouldDoItem (title, url, text) {
-        self = this;
+        var self = this;
         self.title = title;
         self.url = url;
         self.text = text;
