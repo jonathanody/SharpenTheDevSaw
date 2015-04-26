@@ -59,12 +59,12 @@
 
         var updateYouCouldDoItems = function () {
             var items = [];                    
-            
-            settings.stats.youCouldDoItems.forEach(function (item) {                
+                    
+            ko.utils.arrayForEach(settings.stats.youCouldDoItems, function (item) {
                 var itemText = generateYouCouldDoItemText(item.template, item.minutes);
                 
-                items.push(new YouCouldDoItem(item.title, item.url, itemText));                                
-            });                        
+                items.push(new YouCouldDoItem(item.title, item.url, itemText));                  
+            });
             
             self.youCouldDoItems(items);
         };
