@@ -1,7 +1,5 @@
-"use strict";
-
 var settings = {
-    stats: {        
+    stats: {
         averageWorkingHoursPerWeek: 37.5,
         
         youCouldDoItems: [
@@ -40,9 +38,9 @@ var settings = {
                 url: 'http://en.wikipedia.org/wiki/Developer!_Developer!_Developer!',
                 template: 'Attend <span class="emphasize">{0}</span> full day events',
                 minutes: 480
-            }            
+            }
         ]
-    },    
+    },
 
     countUp: {
         options: {
@@ -52,7 +50,7 @@ var settings = {
             decimal: '.',
             prefix: '',
             suffix: ''
-        },        
+        },
         duration: 1.5,
         id: {
             minutesPerYear: 'minutesPerYearCountUp',
@@ -64,7 +62,7 @@ var settings = {
     minsCommitedInputElementName: 'minutesCommited',
     
     youCouldDoItemsContainerElementName: 'you-could-do-items-container',
-    youCouldDoItemsContainerAnimation: 'fadeIn', 
+    youCouldDoItemsContainerAnimation: 'fadeIn',
     
     timeLeftInfoPanelElementName: 'left-this-year-container',
     timeLeftInfoPanelAnimation: 'fadeIn',
