@@ -94,15 +94,16 @@ body {
     text-decoration: none;
 }
 
-.you-could-do-section li a:hover {
-    color: #BDC3C7;
-}
-
 .you-could-do-section li h2 {
     background-color: darkblue; 
     padding: 0.5em 0.3em; 
     margin-top: 1em;   
-    font-weight: normal;
+    font-weight: normal;    
+    transition: 1s background-color, color;
+}
+
+.you-could-do-section li h4 {
+    transition: 1s color;
 }
 
 .emphasize {
@@ -167,4 +168,15 @@ body {
     background-color: #F1844D;
     background-color: #3AA497;
     background-color: #2A80B9;
+}
+
+#you-could-do-items-container a:hover h2 {
+    background-color: #BDC3C7;
+    color: darkblue;      
+    transition: 1s background-color, color;
+}
+
+#you-could-do-items-container a:hover h4 {
+    color: darkblue;  
+    transition: 1s color;
 }
